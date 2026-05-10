@@ -756,27 +756,27 @@ body {
 /* ── Letter page ── */
 .fb-letter-page {
   justify-content: flex-start;
-  padding-top: 24px;
+  padding-top: 12px; /* Dulu 24px, dikecilin biar teks bisa naik */
 }
 .fb-letter-label {
-  font-size: 9px;
+  font-size: 8px; /* Dulu 9px */
   font-weight: 700;
   letter-spacing: 2px;
   color: #c0436a;
-  margin-bottom: 10px;
+  margin-bottom: 6px; /* Dulu 10px */
   text-transform: uppercase;
 }
 .fb-letter-dear {
   font-family: 'Parisienne', 'Playfair Display', cursive;
-  font-size: 18px;
+  font-size: 16px; /* Dulu 18px */
   color: #8b1a4a;
-  margin-bottom: 10px;
+  margin-bottom: 6px; /* Dulu 10px */
 }
 .fb-letter-body {
   font-family: 'Inter', sans-serif;
-  font-size: 0.68rem;
+  font-size: 0.6rem; /* Dulu 0.68rem, dikecilin dikit biar muat */
   color: #5a3040;
-  line-height: 1.7;
+  line-height: 1.5; /* Dulu 1.7, jarak antar baris dirapetin */
   text-align: left;
   width: 100%;
 }
