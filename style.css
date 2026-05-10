@@ -627,8 +627,8 @@ body {
 /* Book container */
 .fb-book {
   position: relative;
-  width: 220px;
-  height: 310px;
+  width: min(200px, 43vw);
+  height: min(282px, 60vw);
   transition: transform 1s;
   border-radius: 10px;
 }
