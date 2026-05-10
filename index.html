@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday, Sayang! 🎉</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Parisienne&family=Playfair+Display:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app">
+
+    <!-- ① INTRO (Pure CSS Netflix Animation) -->
+    <div id="intro-screen" class="screen active" id="intro-screen">
+      <div class="intro-bg"></div>
+      <div class="intro-center">
+        <div class="intro-n-wrap">
+          <div class="intro-n">N</div>
+          <div class="intro-bloom"></div>
+        </div>
+      </div>
+      <p class="skip-hint">Tap untuk skip ›</p>
+    </div>
+
+    <!-- ② PROFILES -->
+    <div id="profile-screen" class="screen">
+      <div class="profile-page">
+        <div class="nf-logo">NETFLIX</div>
+        <h2 class="who-label">Siapa yang nonton?</h2>
+        <div class="profiles-grid">
+          <div class="profile-item" data-name="Mbul">
+            <div class="avatar" style="background:linear-gradient(135deg,#FF6B6B,#FF8E53)">
+              <img src="profiles/mbul.jpg" class="avatar-img" alt="Mbul">
+              <span class="av-fallback">M</span>
+            </div>
+            <p>Mbul</p>
+          </div>
+          <div class="profile-item" data-name="Ciko">
+            <div class="avatar" style="background:linear-gradient(135deg,#4E65FF,#92EFFD)">
+              <img src="profiles/ciko.jpg" class="avatar-img" alt="Ciko">
+              <span class="av-fallback">C</span>
+            </div>
+            <p>Ciko</p>
+          </div>
+          <div class="profile-item" data-name="Oik">
+            <div class="avatar" style="background:linear-gradient(135deg,#0BA360,#3CBA92)">
+              <img src="profiles/oik.jpg" class="avatar-img" alt="Oik">
+              <span class="av-fallback">O</span>
+            </div>
+            <p>Oik</p>
+          </div>
+          <div class="profile-item mpaa-profile" data-name="Mpaa">
+            <div class="avatar mpaa-av" style="background:linear-gradient(135deg,#E50914,#8B0000)">
+              <img src="profiles/mpaa.jpg" class="avatar-img" alt="Mpaa">
+              <span class="av-fallback">❤️</span>
+            </div>
+            <p>Mpaa</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ③ PASSWORD -->
+    <div id="password-screen" class="screen">
+      <div class="password-page">
+        <div class="nf-logo">NETFLIX</div>
+        <div class="mini-profile">
+          <div class="avatar mpaa-av sm" style="background:linear-gradient(135deg,#E50914,#8B0000)">
+            <img src="profiles/mpaa.jpg" class="avatar-img" alt="Mpaa">
+            <span class="av-fallback">❤️</span>
+          </div>
+          <p>Mpaa</p>
+        </div>
+        <h2>Masuk dulu ya sayang!</h2>
+        <div class="pin-box">
+          <label>Tanggal Jadian Kita? (DDMMYY)</label>
+          <input type="password" id="password-input" placeholder="••••••" maxlength="6" inputmode="numeric">
+          <button id="unlock-btn">MASUK</button>
+          <span id="error-msg" class="error hidden">Salah sayang, coba lagi 😅</span>
+        </div>
+        <button id="back-btn" class="back-link">← Ganti Profil</button>
+      </div>
+    </div>
+
+    <!-- ④ APP -->
+    <div id="app-screen" class="screen">
+
+      <!-- TOP NAV -->
+      <nav id="top-nav">
+        <div class="nf-logo nav-logo">NETFLIX</div>
+        <div class="nav-tabs-scroll">
+          <button class="ntab active" data-sec="home-section">Home</button>
+          <button class="ntab" data-sec="about-section">About</button>
+          <button class="ntab" data-sec="episodes-section">Memories</button>
+          <button class="ntab" data-sec="spin-section">Spin</button>
+          <button class="ntab" data-sec="coupons-section">Coupons</button>
+        </div>
+      </nav>
+
+      <!-- HOME -->
+      <div id="home-section" class="app-sec active">
+        <div class="hero">
+          <div class="hero-content">
+            <div class="hero-badge"><span class="n-dot">N</span> SERIES</div>
+            <h1 class="hero-big">HAPPY</h1>
+            <h2 class="hero-script">birthday</h2>
+            <div class="hero-hearts">❤️❤️❤️❤️❤️ <span>YEAR ALL SEASONS</span></div>
+            <p class="hero-desc">"Happy Birthday my love! Here's to celebrating you and all the wonderful moments we're
+              together."</p>
+            <div class="hero-btns">
+              <button id="play-btn" class="btn-play">▶ Play</button>
+              <button id="info-btn" class="btn-info">ⓘ More Info</button>
+            </div>
+          </div>
+        </div>
+        <!-- sub tabs -->
+        <div class="sub-tabs">
+          <button class="stab active" data-panel="overview-panel">Overview</button>
+          <button class="stab" data-panel="trailer-panel">Trailer & More</button>
+        </div>
+        <div id="overview-panel" class="panel active">
+          <p class="ov-meta">2021 • 1 Season • Seumur Hidup</p>
+          <p class="ov-desc">Perjalanan dua manusia yang nemuin satu sama lain dan milih buat terus jalan bareng. Ini
+            seri spesial yang dipersembahkan khusus buat kamu, di hari paling spesial. 🎂</p>
+        </div>
+        <div id="trailer-panel" class="panel hidden">
+          <p class="ov-meta">Tekan Play di atas buat nonton video spesialnya 🎬</p>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <div id="about-section" class="app-sec hidden">
+
+        <!-- PROFILE CARD -->
+        <div class="profile-card">
+          <div class="pc-top">
+            <div class="pc-left">
+              <p class="pc-eyebrow"><span class="n-dot">N</span> ORIGINAL</p>
+              <h2 class="pc-name">Rachmalia<br>Tusyiffa</h2>
+              <p class="pc-bio">Selamat bertambah usia untuk kamu wanita yang entah gimana caranya bikin aku jatuh cinta sama harumnya setiap hari. Penuh
+                kejutan, hangat, dan jadi tempat pulang paling favorit buat aku 🤍</p>
+              <button class="pc-btn" id="pc-contact-btn">♡ Send Love</button>
+            </div>
+            <div class="pc-right">
+              <div class="pc-img-wrap">
+                <img src="profiles/mpaa.jpg" alt="Rachmalia" class="pc-img"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="pc-img-fallback">🌸</div>
+              </div>
+              <div class="pc-img-accent"></div>
+            </div>
+          </div>
+
+          <div class="pc-divider"></div>
+
+          <p class="pc-find">HAL YANG AKU SUKA:</p>
+          <div class="pc-traits">
+            <div class="pc-trait">
+              <span class="pt-icon">😄</span>
+              <div>
+                <div class="pt-title">SENYUMNYA:</div>
+                <div class="pt-desc">Bikin hati aku selalu adem saat ngeliat kamu.</div>
+              </div>
+            </div>
+            <div class="pc-trait">
+              <span class="pt-icon">🥺</span>
+              <div>
+                <div class="pt-title">PERHATIANNYA:</div>
+                <div class="pt-desc">Selalu aware dengan hal-hal kecil dari aku</div>
+              </div>
+            </div>
+            <div class="pc-trait">
+              <span class="pt-icon">🤣</span>
+              <div>
+                <div class="pt-title">HUMORNYA:</div>
+                <div class="pt-desc">Selalu ketawa setiap aku lontarin hal receh</div>
+              </div>
+            </div>
+            <div class="pc-trait">
+              <span class="pt-icon">✨</span>
+              <div>
+                <div class="pt-title">WANGINYA:</div>
+                <div class="pt-desc">Kamu tau betul gimana aku sukanya sama harum kamu</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- THINGS YOU LOVE SWIPER -->
+        <div class="section-header" style="margin-top:8px">
+          <p class="eyebrow">Special Episode</p>
+          <h2 class="sec-title">Things You Love</h2>
+          <p class="sec-sub">Swipe to see what makes you happy 🪩</p>
+        </div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- MEMORIES (FLIPBOOK) -->
+      <div id="episodes-section" class="app-sec hidden">
+        <div class="section-header">
+          <p class="eyebrow">Our Story</p>
+          <h2 class="sec-title">Our Memories</h2>
+          <p class="sec-sub">Tekan ◀ ▶ di bawah untuk membalik halaman</p>
+        </div>
+
+        <!-- Book area -->
+        <div class="fb-scene">
+
+          <div id="fb-book" class="fb-book">
+
+            <!-- Paper 1: Cover → First memory -->
+            <div id="fb-p1" class="fb-paper">
+              <div class="fb-front">
+                <div class="fb-front-content">
+                  <img src="flipbook-cover.png" alt="Cover" class="fb-cover-img">
+                  <h2 class="fb-cover-text">Our<br>Memories</h2>
+                </div>
+              </div>
+              <div class="fb-back">
+                <!-- FOTO HALAMAN 1 — taruh file 'flipbook/page-1.jpg' -->
+                <div class="fb-photo-page">
+                  <img src="flipbook/page-1.jpg" alt="Foto 1" class="fb-photo-full" onerror="this.style.opacity='0'">
+                  <div class="fb-photo-placeholder">📷<br><span>page-1.jpg</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paper 2 -->
+            <div id="fb-p2" class="fb-paper">
+              <div class="fb-front">
+                <!-- FOTO HALAMAN 2 — taruh file 'flipbook/page-2.jpg' -->
+                <div class="fb-photo-page">
+                  <img src="flipbook/page-2.jpg" alt="Foto 2" class="fb-photo-full" onerror="this.style.opacity='0'">
+                  <div class="fb-photo-placeholder">📷<br><span>page-2.jpg</span></div>
+                </div>
+              </div>
+              <div class="fb-back">
+                <!-- FOTO HALAMAN 3 — taruh file 'flipbook/page-3.jpg' -->
+                <div class="fb-photo-page">
+                  <img src="flipbook/page-3.jpg" alt="Foto 3" class="fb-photo-full" onerror="this.style.opacity='0'">
+                  <div class="fb-photo-placeholder">📷<br><span>page-3.jpg</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paper 3 -->
+            <div id="fb-p3" class="fb-paper">
+              <div class="fb-front">
+                <!-- FOTO HALAMAN 4 — taruh file 'flipbook/page-4.jpg' -->
+                <div class="fb-photo-page">
+                  <img src="flipbook/page-4.jpg" alt="Foto 4" class="fb-photo-full" onerror="this.style.opacity='0'">
+                  <div class="fb-photo-placeholder">📷<br><span>page-4.jpg</span></div>
+                </div>
+              </div>
+              <div class="fb-back">
+                <!-- FOTO HALAMAN 5 — taruh file 'flipbook/page-5.jpg' -->
+                <div class="fb-photo-page">
+                  <img src="flipbook/page-5.jpg" alt="Foto 5" class="fb-photo-full" onerror="this.style.opacity='0'">
+                  <div class="fb-photo-placeholder">📷<br><span>page-5.jpg</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paper 4 -->
+            <div id="fb-p4" class="fb-paper">
+              <div class="fb-front">
+                <!-- FOTO HALAMAN 6 — taruh file 'flipbook/page-6.jpg' -->
+                <div class="fb-photo-page">
+                  <img src="flipbook/page-6.jpg" alt="Foto 6" class="fb-photo-full" onerror="this.style.opacity='0'">
+                  <div class="fb-photo-placeholder">📷<br><span>page-6.jpg</span></div>
+                </div>
+              </div>
+              <div class="fb-back">
+                <!-- FOTO HALAMAN 7 — taruh file 'flipbook/page-7.jpg' -->
+                <div class="fb-photo-page">
+                  <img src="flipbook/page-7.jpg" alt="Foto 7" class="fb-photo-full" onerror="this.style.opacity='0'">
+                  <div class="fb-photo-placeholder">📷<br><span>page-7.jpg</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paper 5 -->
+            <div id="fb-p5" class="fb-paper">
+              <div class="fb-front">
+                <!-- FOTO HALAMAN 8 — taruh file 'flipbook/page-8.jpg' -->
+                <div class="fb-photo-page">
+                  <img src="flipbook/page-8.jpg" alt="Foto 8" class="fb-photo-full" onerror="this.style.opacity='0'">
+                  <div class="fb-photo-placeholder">📷<br><span>page-8.jpg</span></div>
+                </div>
+              </div>
+              <div class="fb-back">
+                <!-- FOTO HALAMAN 9 — taruh file 'flipbook/page-9.jpg' -->
+                <div class="fb-photo-page">
+                  <img src="flipbook/page-9.jpg" alt="Foto 9" class="fb-photo-full" onerror="this.style.opacity='0'">
+                  <div class="fb-photo-placeholder">📷<br><span>page-9.jpg</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paper 6 -->
+            <div id="fb-p6" class="fb-paper">
+              <div class="fb-front">
+                <!-- FOTO HALAMAN 10 — taruh file 'flipbook/page-10.jpg' -->
+                <div class="fb-photo-page">
+                  <img src="flipbook/page-10.jpg" alt="Foto 10" class="fb-photo-full" onerror="this.style.opacity='0'">
+                  <div class="fb-photo-placeholder">📷<br><span>page-10.jpg</span></div>
+                </div>
+              </div>
+              <div class="fb-back">
+                <!-- FOTO HALAMAN 11 — taruh file 'flipbook/page-11.jpg' -->
+                <div class="fb-photo-page">
+                  <img src="flipbook/page-11.jpg" alt="Foto 11" class="fb-photo-full" onerror="this.style.opacity='0'">
+                  <div class="fb-photo-placeholder">📷<br><span>page-11.jpg</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paper 7: Surat Cinta → Back cover -->
+            <div id="fb-p7" class="fb-paper">
+              <div class="fb-front">
+                <div class="fb-page-content fb-letter-page">
+                  <p class="fb-letter-label">✦ Surat Cinta ✦</p>
+                  <h3 class="fb-letter-dear">Dear Kamu,</h3>
+                  <p class="fb-letter-body">Selamat ulang tahun ya sayang! 🎂<br><br>
+                    Semoga di umur yang baru ini kamu makin sukses, makin bahagia, dan makin sayang sama aku
+                    hehe.<br><br>
+                    Makasih udah jadi partner terbaik aku. Ga ada kata yang cukup buat ngegambarin betapa berartinya
+                    kamu.<br><br>
+                    I love you ❤️</p>
+                </div>
+              </div>
+              <div class="fb-back">
+                <div class="fb-back-content">
+                  <h2 class="fb-back-text">Happy Birthday,<br>Sayang! 🎉</h2>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /fb-book -->
+
+          <!-- Netflix-style controls BELOW the book -->
+          <div class="fb-controls">
+            <button id="fb-prev-btn" class="fb-nf-btn" aria-label="Previous page">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+              <span>Prev</span>
+            </button>
+            <div class="fb-page-indicator"><span id="fb-cur-page">1</span> / <span id="fb-max-page">8</span></div>
+            <button id="fb-next-btn" class="fb-nf-btn" aria-label="Next page">
+              <span>Next</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
+
+        </div><!-- /fb-scene -->
+
+        <!-- Deskripsi bawah flipbook -->
+        <div class="fb-desc">
+          <p class="fb-desc-quote">“Setiap foto punya cerita, setiap momen punya tempat di hati.”</p>
+          <p class="fb-desc-body">Ini adalah kumpulan kenangan kita — momen-momen kecil yang bikin hari jadi lebih
+            berwarna. Makasih udah ada dan bikin hidup aku lebih menyenangkan.
+            🤍</p>
+          <div class="fb-desc-divider"></div>
+          <p class="fb-desc-meta">Our Story • 2021 – forever</p>
+        </div>
+
+      </div>
+
+      <!-- SPIN -->
+      <div id="spin-section" class="app-sec hidden">
+        <div class="section-header">
+          <p class="eyebrow">Surprise!</p>
+          <h2 class="sec-title">Gift Roulette</h2>
+          <p class="sec-sub">Spin buat tau kado yang kamu buka duluan!</p>
+        </div>
+        <div class="wheel-wrap">
+          <div class="pointer-wrap">
+            <div class="pointer">▼</div>
+          </div>
+          <div class="wheel" id="wheel"></div>
+        </div>
+        <div style="text-align:center;margin-top:24px">
+          <button id="spin-btn">SPIN!</button>
+        </div>
+        <div id="wheel-result" class="hidden">
+          <h3>Yeay! Buka dulu:</h3>
+          <p id="result-text"></p>
+        </div>
+      </div>
+
+      <!-- COUPONS -->
+      <div id="coupons-section" class="app-sec hidden">
+        <div class="section-header">
+          <p class="eyebrow">Exclusive Voucher</p>
+          <h2 class="sec-title">Love Coupons</h2>
+          <p class="sec-sub">Gosok lapisannya buat tau isinya ✨</p>
+        </div>
+        <div class="coupons-wrap"></div>
+      </div>
+
+    </div><!-- /app-screen -->
+
+    <!-- VIDEO MODAL -->
+    <div id="video-modal" class="modal hidden">
+      <button id="close-modal">✕</button>
+      <div class="modal-inner">
+        <iframe id="video-iframe" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- BACKGROUND MUSIC -->
+    <!-- 🎵 Ganti link di bawah dengan direct link Dropbox lu (pastikan pakai ?dl=1 di akhir) -->
+    <audio id="bg-music" loop preload="auto">
+      <source
+        src="https://dl.dropbox.com/scl/fi/vgzsxf3tly3xh1w8q60h0/Feby_Putri_-_Bernaung_-mp3.pm.mp3?rlkey=3yspf5bp8eaxow1zofyenxobs&st=1yogfd7r&dl=1"
+        type="audio/mpeg">
+    </audio>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast hidden"></div>
+
+  </div><!-- /app -->
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
