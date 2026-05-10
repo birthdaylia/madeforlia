@@ -14,12 +14,14 @@ body {
   background:var(--bg); color:var(--white);
   overflow:hidden;
   -webkit-tap-highlight-color:transparent;
+  position: fixed; 
+  inset: 0;
 }
 
 /* ── APP SHELL ─────────────────────────────── */
 #app {
   width:100%; max-width:480px;
-  height:100vh; margin:0 auto;
+  height:100dvh; margin:0 auto;
   position:relative; overflow:hidden;
   background:var(--bg);
 }
@@ -284,7 +286,7 @@ body {
 
 /* ── ④ APP SCREEN ──────────────────────────── */
 #app-screen { display:none; overflow:hidden; }
-#app-screen.active { display:flex; flex-direction:column; }
+#app-screen.active { display:flex; flex-direction:column;justify-content:flex-start; }
 
 /* TOP NAV */
 #top-nav {
